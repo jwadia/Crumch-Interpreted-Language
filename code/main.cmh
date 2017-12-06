@@ -1,5 +1,5 @@
 int q = 5;
-int cyka = 25;
+int k = 25;
 
-printl(q " Hi " cyka " Whats up " cyka);
-print(q " Hi " cyka " Whats up " cyka);
+printl(q " Hi " k " Whats up " k);
+print(q " Hi " k " Whats up " k);
