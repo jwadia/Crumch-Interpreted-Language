@@ -1,0 +1,5 @@
+int q = 5;
+int cyka = 25;
+
+printl(q " Hi " cyka " Whats up " cyka);
+print(q " Hi " cyka " Whats up " cyka);
