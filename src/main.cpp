@@ -2,13 +2,13 @@
 #include <string>
 #include <fstream>
 
-std::string integerName[100000];
-int integerValue[100000];
+std::string variableName[100000];
+std::string variableValue[100000];
 
-int searchInt(std::string name) {
+int searchVariable(std::string name) {
   try {
     for(int i = 0; i < 100000; i++) {
-      if(integerName[i] == name) {
+      if(variableName[i] == name) {
         return i;
       }
     }
@@ -47,14 +47,14 @@ int lexer(std::string syntax) {
           temp = temp + syntax[i];
         } else {
           if(!(temp.empty())) {
-            std::cout << integerValue[searchInt(temp)];
+            std::cout << variableValue[searchVariable(temp)];
             temp = "";
           }
         }
       }
     }
     if(!(temp.empty())) {
-      std::cout << integerValue[searchInt(temp)];
+      std::cout << variableValue[searchVariable(temp)];
       temp = "";
     }
   } else if (command == "printl") {
@@ -72,36 +72,36 @@ int lexer(std::string syntax) {
           temp = temp + syntax[i];
         } else {
           if(!(temp.empty())) {
-            std::cout << integerValue[searchInt(temp)];
+            std::cout << variableValue[searchVariable(temp)];
             temp = "";
           }
         }
       }
     }
     if(!(temp.empty())) {
-      std::cout << integerValue[searchInt(temp)];
+      std::cout << variableValue[searchVariable(temp)];
       temp = "";
     }
     std::cout << std::endl;
-  } else if (command == "int") {
+  } else if (command == "var") {
     std::string temp;
-    std::string tempInt[100];
+    std::string tempVar[100];
     int count = 0;
     for(int i = 0; i < syntax.length(); i++) {
       if(syntax[i] != ' ') {
         temp = temp + syntax[i];
       } else {
-        tempInt[count] = temp;
+        tempVar[count] = temp;
         count++;
         temp = "";
       }
     }
-    int value = std::stoi(temp);
+    std::string value = temp;
     count = 0;
     while(count < 100000) {
-      if(integerName[count].empty()) {
-        integerName[count] = tempInt[1];
-        integerValue[count] = value;
+      if(variableName[count].empty()) {
+        variableName[count] = tempVar[1];
+        variableValue[count] = value;
         break;
       }
       count++;

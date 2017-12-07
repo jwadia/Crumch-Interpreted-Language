@@ -1,5 +1,5 @@
-int q = 5;
-int k = 25;
+var q = 5;
+var k = What up doc;
 
 printl(q " Hi " k " Whats up " k);
 print(q " Hi " k " Whats up " k);
